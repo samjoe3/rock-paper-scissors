@@ -10,20 +10,48 @@ function getUserChoice() {
     else if (userInput.toLowerCase() === "scissors") {
         return 3;
     }
-    else return "Invalid entry, please try again."
     }
 function getComputerChoice() {
     return Math.floor(Math.random() * 3) + 1;
 }
+
 function playRound() {
     let userChoice = getUserChoice();
     let compChoice = getComputerChoice();
     if (userChoice === compChoice) {
-        return `"tie, you chose: ${userChoice}, and the computer chose: ${compChoice}."`;
+        return "tie";
     } 
-    else if ((userChoice === 1 && compChoice === 2)||(userChoice === 2 && compChoice === 3)||(userChoice === 3 && compChoice === 1)) {
-        return `"lose, you chose: ${userChoice}, and the computer chose: ${compChoice}."`;
+    else if ((userChoice === 1 && compChoice === 2)||(userChoice === 2 && compChoice === 1)||(userChoice === 3 && compChoice === 2)) {
+        return "lose";
     }
-    else return `"win, you chose: ${userChoice}, and the computer chose: ${compChoice}."`;
+    else if ((userChoice === 1 && compChoice === 3)||(userChoice === 2 && compChoice === 3)||(userChoice === 3 && compChoice === 1)) {
+        return "win";
+    }
+    else return "invalid";
 }
-console.log(playRound());
+function game() {
+    let roundTies = 0;
+    let roundWins = 0;
+    let roundLosses = 0;
+    for (let i = 0; i < 5; i++) {
+        let roundResult = playRound();
+
+        if (roundResult === "tie") {
+            roundTies++;
+            console.log(`Wins: ${roundWins}, Losses: ${roundLosses}, Ties: ${roundTies}.`);
+        }
+        else if (roundResult === "lose") {
+            roundLosses++;
+            console.log(`Wins: ${roundWins}, Losses: ${roundLosses}, Ties: ${roundTies}.`);
+        }
+        else if (roundResult === "win")  { 
+            roundWins++;
+            console.log(`Wins: ${roundWins}, Losses: ${roundLosses}, Ties: ${roundTies}.`);
+        }
+        else if (roundResult === "invalid") {
+            i--;
+            console.log("Invalid answer, please try again.");
+        }
+}
+}
+game();
