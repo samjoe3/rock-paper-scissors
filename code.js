@@ -1,22 +1,13 @@
-function getUserChoice() {
-    let userInput = prompt('Enter: \"Rock\", \"Paper\", or \"Scissors\".');
-
-    if (userInput.toLowerCase() === "rock") {
-        return 1;
-    }
-    else if (userInput.toLowerCase() === "paper") {
-        return 2;
-    }
-    else if (userInput.toLowerCase() === "scissors") {
-        return 3;
-    }
+function getUserChoice(choice) {
+    userChoice = choice.toString();
+    return choice;
     }
 function getComputerChoice() {
     return Math.floor(Math.random() * 3) + 1;
 }
 
 function playRound() {
-    let userChoice = getUserChoice();
+    let userChoice = getUserChoice(choice);
     let compChoice = getComputerChoice();
     if (userChoice === compChoice) {
         return "tie";
@@ -52,6 +43,8 @@ function game() {
             i--;
             console.log("Invalid answer, please try again.");
         }
-}
+    }
 }
 //game();
+const rock = document.querySelector('#rock');
+rock.addEventListener('click',  getUserChoice("rock"), game());
