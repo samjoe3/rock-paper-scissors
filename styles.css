@@ -1,0 +1,45 @@
+/*styles.css*/
+
+html {
+    padding: 0px;
+    margin: 0px;
+    background: url(background.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+body {
+
+    font-family: sans-serif;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#scoreboard {
+    min-height: 11vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 15px;
+}
+
+#selections {
+    min-height: 200px;
+    display: flex;
+    justify-content: space-around;
+
+
+
+}
+#rock, #paper, #scissors {
+    min-height: 100px;
+    min-width: 12vh;
+    background-color: rgba(0,0,0,0.3);
+    border: .3rem;
+    border-style: solid;
+    border-color: black;
+    border-radius: .4rem;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
