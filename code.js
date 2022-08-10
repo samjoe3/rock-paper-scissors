@@ -1,13 +1,9 @@
-function getUserChoice(choice) {
-    userChoice = choice.toString();
-    return choice;
-    }
 function getComputerChoice() {
     return Math.floor(Math.random() * 3) + 1;
 }
 
-function playRound() {
-    let userChoice = getUserChoice(choice);
+function playRound(choice) {
+    let userChoice = choice;
     let compChoice = getComputerChoice();
     if (userChoice === compChoice) {
         return "tie";
@@ -20,12 +16,12 @@ function playRound() {
     }
     else return "invalid";
 }
-function game() {
+function game(choice) {
     let roundTies = 0;
     let roundWins = 0;
     let roundLosses = 0;
-    for (let i = 0; i < 5; i++) {
-        let roundResult = playRound();
+    //for (let i = 0; i < 5; i++) {
+        let roundResult = playRound(choice);
 
         if (roundResult === "tie") {
             roundTies++;
@@ -44,7 +40,8 @@ function game() {
             console.log("Invalid answer, please try again.");
         }
     }
-}
+//}
 //game();
-const rock = document.querySelector('#rock');
-rock.addEventListener('click',  getUserChoice("rock"), game());
+document.getElementById("rock").onclick = function() {game(1)};
+document.getElementById("paper").onclick = function() {game(2)};
+document.getElementById("scissors").onclick = function() {game(3)};
