@@ -43,14 +43,35 @@ div {
 }
 #rock, #paper, #scissors {
     min-height: 100px;
-    min-width: 12vh;
-    background-color: rgba(0,0,0,0.3);
+    min-width: 130px;
+    background-color: rgba(255, 255, 255, 0.15);
     border: .3rem;
     border-style: solid;
-    border-color: black;
+    border-color: white;
     border-radius: .4rem;
     color: white;
-    font-size: large;
+    font-size: 1.5rem;
     font-weight: bold;
-    text-shadow: 0 0 .3rem black;
+    text-shadow: 0 0 .4rem black;
+}
+#resultdisplay {
+    padding: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: .3rem;
+    border-style: solid;
+    border-color: white;
+    border-radius: .4rem;
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 0 0 .4rem black;
+    align-self: flex-end;
+    
+}
+#cheatbox {
+    height: 60vh;
+    display: flex;
+    padding-bottom: 5%;
+
 }
