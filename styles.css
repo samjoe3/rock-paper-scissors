@@ -30,7 +30,7 @@ div {
 }
 #underboard {
     padding-top: 15px;
-    font-size: medium;
+    font-size: 1.75rem;
 }
 
 #selections {
@@ -42,7 +42,7 @@ div {
 
 }
 #rock, #paper, #scissors {
-    min-height: 100px;
+    min-height: 120px;
     min-width: 130px;
     background-color: rgba(255, 255, 255, 0.15);
     border: .3rem;
@@ -53,6 +53,7 @@ div {
     font-size: 1.5rem;
     font-weight: bold;
     text-shadow: 0 0 .4rem black;
+    box-shadow: 0 0 0.4rem black;
 }
 #resultdisplay {
     padding: 1rem;
@@ -63,15 +64,15 @@ div {
     border-style: solid;
     border-color: white;
     border-radius: .4rem;
-    font-size: 3.5rem;
+    font-size: 6rem;
     color: white;
     text-shadow: 0 0 .4rem black;
     align-self: flex-end;
+    box-shadow: 0 0 0.4rem black;
     
 }
 #cheatbox {
-    height: 60vh;
+    height: 57vh;
     display: flex;
-    padding-bottom: 5%;
-
 }
+

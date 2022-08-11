@@ -54,8 +54,6 @@ function game(choice) {
         document.getElementById("resultdisplay").innerHTML = result;
     }
 
-//}
-//game();
 document.getElementById("rock").onclick = function() {game(1)};
 document.getElementById("paper").onclick = function() {game(2)};
 document.getElementById("scissors").onclick = function() {game(3)};
