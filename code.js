@@ -54,6 +54,12 @@ function game(choice) {
         document.getElementById("resultdisplay").innerHTML = result;
     }
 
-document.getElementById("rock").onclick = function() {game(1)};
-document.getElementById("paper").onclick = function() {game(2)};
-document.getElementById("scissors").onclick = function() {game(3)};
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {game(1)});
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {game(2)});
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => {game(3)});
+//document.getElementById("rock").onclick = function() {game(1)};
+//document.getElementById("paper").onclick = function() {game(2)};
+//document.getElementById("scissors").onclick = function() {game(3)};

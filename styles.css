@@ -41,7 +41,7 @@ div {
 
 
 }
-#rock, #paper, #scissors {
+.rock, .paper, .scissors {
     min-height: 120px;
     min-width: 130px;
     background-color: rgba(255, 255, 255, 0.15);
