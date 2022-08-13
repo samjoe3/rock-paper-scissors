@@ -33,7 +33,7 @@ div {
     font-size: 1.75rem;
 }
 
-#selections {
+.selections {
 /*    min-height: 200px;*/
     display: flex;
     justify-content: space-around;
@@ -54,6 +54,7 @@ div {
     font-weight: bold;
     text-shadow: 0 0 .4rem black;
     box-shadow: 0 0 0.4rem black;
+    transition: all 0.07s;
 }
 #resultdisplay {
     padding: 1rem;
@@ -75,4 +76,8 @@ div {
     height: 57vh;
     display: flex;
 }
-
+.whileclicking {
+    transform: scale(1.1);
+    box-shadow: 0 0 0.6rem black;
+    text-shadow: 0 0 .6rem black;    
+}

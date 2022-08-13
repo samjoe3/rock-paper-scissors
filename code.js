@@ -53,13 +53,24 @@ function game(choice) {
     function resultDisplay() {
         document.getElementById("resultdisplay").innerHTML = result;
     }
+    function rockClick() {
+        rock.classList.toggle('whileclicking');
+        game(1);
+    }
+    function rockUnclick() {
+        rock.classList.toggle('whileclicking');
+// this function paired with the setTimeout event listener will remove the whileclicking class after 40ms?
+// need to add this function and event listener to paper and scissors and results display
+    }
 
-const rock = document.querySelector('#rock');
-rock.addEventListener('click', () => {game(1)});
-const paper = document.querySelector('#paper');
+const rock = document.querySelector('.rock');
+rock.addEventListener('click', () => {rockClick()});
+rock.addEventListener('click', () => {setTimeout(rockUnclick, 40)});
+const paper = document.querySelector('.paper');
 paper.addEventListener('click', () => {game(2)});
-const scissors = document.querySelector("#scissors");
+const scissors = document.querySelector(".scissors");
 scissors.addEventListener("click", () => {game(3)});
+
 //document.getElementById("rock").onclick = function() {game(1)};
 //document.getElementById("paper").onclick = function() {game(2)};
 //document.getElementById("scissors").onclick = function() {game(3)};
