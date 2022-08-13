@@ -29,7 +29,6 @@ let roundWins = 0;
 let roundLosses = 0;
 
 function game(choice) {
-    //for (let i = 0; i < 5; i++) {
         let roundResult = playRound(choice);
 
         if (roundResult === "tie") {
@@ -47,30 +46,45 @@ function game(choice) {
 
         scoreBoard();
     }
+    let underboard = document.querySelector('.underboard');
     function scoreBoard() {
-        document.getElementById("underboard").innerHTML = `Wins: ${roundWins}, Losses: ${roundLosses}, Ties: ${roundTies}.`;
+        underboard.innerHTML = `Wins: ${roundWins}, Losses: ${roundLosses}, Ties: ${roundTies}.`;
+        underboard.classList.toggle('whileclickingresults');
+        setTimeout(unClick, 40);
     }
+    let resultdisplay = document.querySelector(".resultdisplay");
     function resultDisplay() {
-        document.getElementById("resultdisplay").innerHTML = result;
+        resultdisplay.innerHTML = result;
+        resultdisplay.classList.toggle('whileclickingresults');
+        setTimeout(unClick, 40);
     }
     function rockClick() {
         rock.classList.toggle('whileclicking');
         game(1);
+        setTimeout(unClick, 40);
     }
-    function rockUnclick() {
-        rock.classList.toggle('whileclicking');
-// this function paired with the setTimeout event listener will remove the whileclicking class after 40ms?
-// need to add this function and event listener to paper and scissors and results display
+    function paperClick() {
+        paper.classList.toggle('whileclicking');
+        game(2);
+        setTimeout(unClick, 40);
+    }
+    function scissorsClick() {
+        scissors.classList.toggle('whileclicking');
+        game(3);
+        setTimeout(unClick, 40);
+    }
+    function unClick() {
+        rock.classList.remove('whileclicking');
+        paper.classList.remove('whileclicking');
+        scissors.classList.remove('whileclicking');
+        resultdisplay.classList.remove('whileclickingresults');
+        underboard.classList.remove('whileclickingresults');
     }
 
 const rock = document.querySelector('.rock');
-rock.addEventListener('click', () => {rockClick()});
-rock.addEventListener('click', () => {setTimeout(rockUnclick, 40)});
 const paper = document.querySelector('.paper');
-paper.addEventListener('click', () => {game(2)});
 const scissors = document.querySelector(".scissors");
-scissors.addEventListener("click", () => {game(3)});
 
-//document.getElementById("rock").onclick = function() {game(1)};
-//document.getElementById("paper").onclick = function() {game(2)};
-//document.getElementById("scissors").onclick = function() {game(3)};
+rock.addEventListener('click', () => {rockClick()});
+paper.addEventListener('click', () => {paperClick()});
+scissors.addEventListener("click", () => {scissorsClick()});

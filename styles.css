@@ -16,7 +16,7 @@ div {
     justify-content: center;
     align-items: center;
 }
-#scoreboard {
+.scoreboard {
     min-height: 11vh;
     display: flex;
     flex-direction: column;
@@ -28,17 +28,21 @@ div {
     color: white;
     text-shadow: 0 0 .5rem black;
 }
-#underboard {
-    padding-top: 15px;
+.underboard {
+    padding: 7px;
     font-size: 1.75rem;
+    border: .3rem;
+    border-style: solid;
+    border-color: white;
+    border-radius: .4rem;
+    box-shadow: 0 0 0.4rem black;
+    background-color: rgba(255, 255, 255, 0.09);
+    margin-bottom: 10px;
 }
 
 .selections {
-/*    min-height: 200px;*/
     display: flex;
     justify-content: space-around;
-
-
 
 }
 .rock, .paper, .scissors {
@@ -54,9 +58,9 @@ div {
     font-weight: bold;
     text-shadow: 0 0 .4rem black;
     box-shadow: 0 0 0.4rem black;
-    transition: all 0.07s;
+    transition: all 0.04s;
 }
-#resultdisplay {
+.resultdisplay {
     padding: 1rem;
     padding-right: 2rem;
     padding-left: 2rem;
@@ -70,14 +74,19 @@ div {
     text-shadow: 0 0 .4rem black;
     align-self: flex-end;
     box-shadow: 0 0 0.4rem black;
+    transition: all 0.04s;
     
 }
 #cheatbox {
     height: 57vh;
     display: flex;
 }
+
 .whileclicking {
-    transform: scale(1.1);
-    box-shadow: 0 0 0.6rem black;
-    text-shadow: 0 0 .6rem black;    
+    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+.whileclickingresults {
+    background-color: rgba(255, 255, 255, 0.55);
 }
